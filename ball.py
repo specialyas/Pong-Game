@@ -14,10 +14,13 @@ class Ball(Turtle):
         self.y = 10
         self.penup()
 
-    def move_up(self):
+    def move(self):
         x = self.xcor() + self.x
         y = self.ycor() + self.y
         self.goto(x, y)
 
-    def move_down(self):
+    def bounce_y(self):
         self.y *= -1
+
+    def bounce_x(self):
+        self.x *= -1

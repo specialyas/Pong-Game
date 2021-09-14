@@ -1,6 +1,4 @@
 from turtle import Turtle
-X = 10
-Y = 10
 
 
 class Ball(Turtle):
@@ -13,6 +11,7 @@ class Ball(Turtle):
         self.x = 10
         self.y = 10
         self.penup()
+        self.move_speed = 0.1
 
     def move(self):
         x = self.xcor() + self.x
@@ -24,7 +23,10 @@ class Ball(Turtle):
 
     def bounce_x(self):
         self.x *= -1
+        self.move_speed *= 0.9
 
     def reset_position(self):
         self.goto(0, 0)
+        self.bounce_x()
+        self.move_speed = 0.1
 
